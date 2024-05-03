@@ -8,9 +8,9 @@ import (
 	"github.com/fatih/color"
 	ansi "github.com/k0kubun/go-ansi"
 	"github.com/mitchellh/go-homedir"
-	"github.com/xalanq/cf-tool/client"
-	"github.com/xalanq/cf-tool/cmd"
-	"github.com/xalanq/cf-tool/config"
+	"github.com/lcian/cf-tool/client"
+	"github.com/lcian/cf-tool/cmd"
+	"github.com/lcian/cf-tool/config"
 
 	docopt "github.com/docopt/docopt-go"
 )
@@ -20,7 +20,7 @@ const configPath = "~/.cf/config"
 const sessionPath = "~/.cf/session"
 
 func main() {
-	usage := `Codeforces Tool $%version%$ (cf). https://github.com/xalanq/cf-tool
+	usage := `Codeforces Tool $%version%$ (cf). https://github.com/lcian/cf-tool
 
 You should run "cf config" to configure your handle, password and code
 templates at first.
@@ -106,7 +106,7 @@ Examples:
                        "a" of contest 100.
   cf pull              Pull the latest codes of current problem into current
                        path.
-  cf clone xalanq      Clone all codes of xalanq.
+  cf clone lcian      Clone all codes of lcian.
   cf upgrade           Upgrade the "cf" to the latest version from GitHub.
 
 File:
@@ -121,7 +121,7 @@ Template:
   You can insert some placeholders into your template code. When generate a code
   from the template, cf will replace all placeholders by following rules:
 
-  $%U%$   Handle (e.g. xalanq)
+  $%U%$   Handle (e.g. lcian)
   $%Y%$   Year   (e.g. 2019)
   $%M%$   Month  (e.g. 04)
   $%D%$   Day    (e.g. 09)
@@ -142,7 +142,7 @@ Script in template:
   You can insert some placeholders in your scripts. When execute a script,
   cf will replace all placeholders by following rules:
 
-  $%path%$   Path to source file (Excluding $%full%$, e.g. "/home/xalanq/")
+  $%path%$   Path to source file (Excluding $%full%$, e.g. "/home/lcian/")
   $%full%$   Full name of source file (e.g. "a.cpp")
   $%file%$   Name of source file (Excluding suffix, e.g. "a")
   $%rand%$   Random string with 8 character (including "a-z" "0-9")`
