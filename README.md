@@ -38,12 +38,13 @@ You can download the pre-compiled binary file in [here](https://github.com/lcian
 
 Then enjoy the cf-tool~
 
-Or you can compile it from the source **(go >= 1.12)**:
+Or you can compile it from the source **(go >= 1.22)**:
 
-```plain
-$ go get github.com/lcian/cf-tool
-$ cd $GOPATH/src/github.com/lcian/cf-tool
-$ go build -ldflags "-s -w" cf.go
+```sh
+git clone https://github.com/lcian/cf-tool.git
+cd cf-tool
+go build -ldflags "-s -w"
+go install
 ```
 
 If you don't know what's the `$GOPATH`, please see here <https://github.com/golang/go/wiki/GOPATH>.
