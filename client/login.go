@@ -52,7 +52,7 @@ func findCsrf(body []byte) (string, error) {
 	return string(tmp[1]), nil
 }
 
-// Prompt the user for the cf_clearance Cloudflare cookie
+// Prompt the user for the cf_clearance Cloudflare cookie and store it in the cookie jar
 func (c *Client) GetCloudflareCookieFromUser() (err error) {
 	color.Cyan("Cloudflare cookie required")
 	color.Cyan("Inspect the cookies in your browser (e.g. in Chrome, on the Codeforces home page: Right click > Inspect > Application > Cookies > https://codeforces.com) and copy the required cookie")
@@ -81,7 +81,6 @@ func (c *Client) Login() (err error) {
 	jar, _ := cookiejar.New(nil)
 	c.client.Jar = jar
 	body, err := util.GetBody(c.client, c.host+"/enter")
-	fmt.Println(string(body))
 	if err != nil {
 		return
 	}
