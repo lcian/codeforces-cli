@@ -43,11 +43,11 @@ Or you can compile it from the source **(go >= 1.22)**:
 ```sh
 git clone https://github.com/lcian/cf-tool.git
 cd cf-tool
-go build -ldflags "-s -w"
-go install
+make
+make install
 ```
 
-If you don't know what's the `$GOPATH`, please see here <https://github.com/golang/go/wiki/GOPATH>.
+This will install the `cf` binary to your `$GOPATH/bin` directory.
 
 ## Usage
 
