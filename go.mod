@@ -1,6 +1,6 @@
 module github.com/lcian/cf-tool
 
-go 1.22.2
+go 1.22
 
 require (
 	github.com/PuerkitoBio/goquery v1.9.2
