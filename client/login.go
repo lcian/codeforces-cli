@@ -9,6 +9,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"net/http"
 	"net/url"
 	"regexp"
 	"syscall"
@@ -51,6 +52,23 @@ func findCsrf(body []byte) (string, error) {
 	return string(tmp[1]), nil
 }
 
+// Prompt the user for the cf_clearance Cloudflare cookie
+func (c *Client) GetCloudflareCookieFromUser() (err error) {
+	color.Cyan("Cloudflare cookie required")
+	color.Cyan("Inspect the cookies in your browser (e.g. in Chrome, on the Codeforces home page: Right click > Inspect > Application > Cookies > https://codeforces.com) and copy the required cookie")
+	fmt.Printf("cf_clearance: ")
+	cf_clearance := util.ScanlineTrim()
+	cf_clearance_cookie := http.Cookie{
+		Name:   "cf_clearance",
+		Value:  cf_clearance,
+		Path:   "/",
+		Domain: "codeforces.com",
+	}
+	url, _ := url.Parse("codeforces.com")
+	c.client.Jar.SetCookies(url, append(c.client.Jar.Cookies(url), &cf_clearance_cookie))
+	return nil
+}
+
 // Login codeforces with handler and password
 func (c *Client) Login() (err error) {
 	color.Cyan("Login %v...\n", c.HandleOrEmail)
@@ -63,13 +81,30 @@ func (c *Client) Login() (err error) {
 	jar, _ := cookiejar.New(nil)
 	c.client.Jar = jar
 	body, err := util.GetBody(c.client, c.host+"/enter")
+	fmt.Println(string(body))
 	if err != nil {
 		return
 	}
 
 	csrf, err := findCsrf(body)
 	if err != nil {
-		return
+		color.Red(err.Error())
+		/* One of the failure scenarios for findCsrf is when our request for "/enter" is redirected to a Cloudflare challenge page
+		 * Let's get the cf_clearance cookie that Cloudflare sets when a challenge is passed and retry
+		 */
+		err = c.GetCloudflareCookieFromUser()
+		if err != nil {
+			color.Red(err.Error())
+			return
+		}
+		body, err = util.GetBody(c.client, c.host+"/enter")
+		if err != nil {
+			return
+		}
+		csrf, err = findCsrf(body)
+		if err != nil {
+			return
+		}
 	}
 
 	ftaa := genFtaa()
