@@ -2,7 +2,7 @@
 
 [![Github release](https://img.shields.io/github/release/lcian/cf-tool.svg)](https://github.com/lcian/cf-tool/releases)
 [![platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-blue.svg)](https://github.com/lcian/cf-tool/releases)
-[![Build Status](https://travis-ci.org/lcian/cf-tool.svg?branch=master)](https://travis-ci.org/lcian/cf-tool)
+![Build](https://github.com/lcian/cf-tool/actions/workflows/build.yaml/badge.svg)
 [![Go Report Card](https://goreportcard.com/badge/github.com/lcian/cf-tool)](https://goreportcard.com/report/github.com/lcian/cf-tool)
 [![Go Version](https://img.shields.io/badge/go-%3E%3D1.12-green.svg)](https://github.com/golang)
 [![license](https://img.shields.io/badge/license-MIT-%23373737.svg)](https://raw.githubusercontent.com/lcian/cf-tool/master/LICENSE)
