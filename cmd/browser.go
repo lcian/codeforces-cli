@@ -2,9 +2,9 @@ package cmd
 
 import (
 	"github.com/fatih/color"
-	"github.com/skratchdot/open-golang/open"
 	"github.com/lcian/cf-tool/client"
 	"github.com/lcian/cf-tool/config"
+	"github.com/skratchdot/open-golang/open"
 )
 
 func openURL(url string) error {

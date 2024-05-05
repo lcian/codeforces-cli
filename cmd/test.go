@@ -15,10 +15,10 @@ import (
 
 	"github.com/fatih/color"
 	ansi "github.com/k0kubun/go-ansi"
-	"github.com/sergi/go-diff/diffmatchpatch"
-	"github.com/shirou/gopsutil/process"
 	"github.com/lcian/cf-tool/config"
 	"github.com/lcian/cf-tool/util"
+	"github.com/sergi/go-diff/diffmatchpatch"
+	"github.com/shirou/gopsutil/process"
 )
 
 func splitCmd(s string) (res []string) {

@@ -9,9 +9,9 @@ import (
 
 	"github.com/fatih/color"
 	ansi "github.com/k0kubun/go-ansi"
-	homedir "github.com/mitchellh/go-homedir"
 	"github.com/lcian/cf-tool/client"
 	"github.com/lcian/cf-tool/util"
+	homedir "github.com/mitchellh/go-homedir"
 )
 
 // AddTemplate add template

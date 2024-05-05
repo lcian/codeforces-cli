@@ -7,10 +7,10 @@ import (
 
 	"github.com/fatih/color"
 	ansi "github.com/k0kubun/go-ansi"
-	"github.com/mitchellh/go-homedir"
 	"github.com/lcian/cf-tool/client"
 	"github.com/lcian/cf-tool/cmd"
 	"github.com/lcian/cf-tool/config"
+	"github.com/mitchellh/go-homedir"
 
 	docopt "github.com/docopt/docopt-go"
 )
