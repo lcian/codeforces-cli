@@ -36,9 +36,13 @@ Pull requests are always welcome.
 
 You can download the pre-compiled binary file in [here](https://github.com/lcian/cf-tool/releases).
 
-Then enjoy the cf-tool~
+Or you can use `go install`:
 
-Or you can compile it from the source **(go >= 1.22)**:
+```sh
+go install github.com/lcian/cf-tool@latest
+```
+
+Or you can compile it from source **(go >= 1.22)**:
 
 ```sh
 git clone https://github.com/lcian/cf-tool.git
