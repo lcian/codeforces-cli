@@ -27,7 +27,7 @@ func formatHost(host string) (string, error) {
 }
 
 func formatProxy(proxy string) (string, error) {
-	reg := regexp.MustCompile(`[\w\-]+?://[\w\-]+(\.[\w\-]+)*(:\d+)?`)
+	reg := regexp.MustCompile(`(^\s*$)|([\w\-]+?://[\w\-]+(\.[\w\-]+)*(:\d+)?)`)
 	if !reg.MatchString(proxy) {
 		return "", fmt.Errorf(`Invalid proxy "%v"`, proxy)
 	}
@@ -70,17 +70,16 @@ func (c *Config) SetProxy() (err error) {
 	color.Cyan(`Enter empty line if you want to use default proxy from environment`)
 	color.Cyan(`Note: Proxy URL should match "protocol://host[:port]"`)
 	for {
-		proxy, err = formatProxy(util.ScanlineTrim())
+		c.Proxy, err = formatProxy(util.ScanlineTrim())
 		if err == nil {
 			break
 		}
 		color.Red(err.Error())
 	}
-	c.Proxy = proxy
-	if len(proxy) == 0 {
+	if len(c.Proxy) == 0 {
 		color.Green("Current proxy is based on environment")
 	} else {
-		color.Green("Current proxy is %v", proxy)
+		color.Green("Current proxy is %v", c.Proxy)
 	}
 	return c.save()
 }
