@@ -142,14 +142,12 @@ func (c *Client) Clone(handle, rootPath string, ac bool) (err error) {
 				mu.Unlock()
 				return
 			}
-			ext, ok := LangsExt[lang]
-			if !ok {
-				mu.Lock()
-				count++
-				color.Red(fmt.Sprintf(`%v/%v Error %v: Language "%v" is not supported`, count, total, info.Hint(), lang))
-				mu.Unlock()
-				return
-			}
+            var ext string
+            for known_lang := range LangsExt {
+                if strings.Contains(lang, known_lang) {
+			        ext, _ = LangsExt[known_lang]
+                }
+            }
 			filename := submissionID
 			if verdict != "OK" {
 				testCount := int64(submission["passedTestCount"].(float64))
