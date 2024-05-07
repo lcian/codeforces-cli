@@ -3,8 +3,8 @@ package cmd
 import (
 	"io/ioutil"
 
-	"github.com/lcian/cf-tool/client"
-	"github.com/lcian/cf-tool/config"
+	"github.com/lcian/codeforces-cli/client"
+	"github.com/lcian/codeforces-cli/config"
 )
 
 // Submit command

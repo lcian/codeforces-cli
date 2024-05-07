@@ -10,7 +10,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/lcian/cf-tool/util"
+	"github.com/lcian/codeforces-cli/util"
 
 	"github.com/fatih/color"
 )

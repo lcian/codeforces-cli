@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/fatih/color"
-	"github.com/lcian/cf-tool/util"
+	"github.com/lcian/codeforces-cli/util"
 )
 
 type cloneData struct {

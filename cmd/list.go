@@ -8,7 +8,7 @@ import (
 
 	"github.com/fatih/color"
 	ansi "github.com/k0kubun/go-ansi"
-	"github.com/lcian/cf-tool/client"
+	"github.com/lcian/codeforces-cli/client"
 	"github.com/olekukonko/tablewriter"
 )
 

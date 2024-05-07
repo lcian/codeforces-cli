@@ -9,8 +9,8 @@ import (
 
 	"github.com/fatih/color"
 	ansi "github.com/k0kubun/go-ansi"
-	"github.com/lcian/cf-tool/client"
-	"github.com/lcian/cf-tool/util"
+	"github.com/lcian/codeforces-cli/client"
+	"github.com/lcian/codeforces-cli/util"
 	homedir "github.com/mitchellh/go-homedir"
 )
 

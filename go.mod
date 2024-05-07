@@ -1,4 +1,4 @@
-module github.com/lcian/cf-tool
+module github.com/lcian/codeforces-cli
 
 go 1.22
 

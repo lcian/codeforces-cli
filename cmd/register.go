@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/lcian/cf-tool/client"
+	"github.com/lcian/codeforces-cli/client"
 )
 
 // Register command

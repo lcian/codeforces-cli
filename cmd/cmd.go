@@ -11,9 +11,9 @@ import (
 	"github.com/docopt/docopt-go"
 
 	"github.com/fatih/color"
-	"github.com/lcian/cf-tool/client"
-	"github.com/lcian/cf-tool/config"
-	"github.com/lcian/cf-tool/util"
+	"github.com/lcian/codeforces-cli/client"
+	"github.com/lcian/codeforces-cli/config"
+	"github.com/lcian/codeforces-cli/util"
 )
 
 // Eval opts

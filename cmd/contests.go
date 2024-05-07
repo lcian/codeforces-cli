@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/fatih/color"
-	"github.com/lcian/cf-tool/client"
+	"github.com/lcian/codeforces-cli/client"
 	"github.com/olekukonko/tablewriter"
 )
 

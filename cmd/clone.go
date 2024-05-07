@@ -3,7 +3,7 @@ package cmd
 import (
 	"os"
 
-	"github.com/lcian/cf-tool/client"
+	"github.com/lcian/codeforces-cli/client"
 )
 
 // Clone command

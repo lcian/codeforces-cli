@@ -7,9 +7,9 @@ import (
 
 	"github.com/fatih/color"
 	ansi "github.com/k0kubun/go-ansi"
-	"github.com/lcian/cf-tool/client"
-	"github.com/lcian/cf-tool/cmd"
-	"github.com/lcian/cf-tool/config"
+	"github.com/lcian/codeforces-cli/client"
+	"github.com/lcian/codeforces-cli/cmd"
+	"github.com/lcian/codeforces-cli/config"
 	"github.com/mitchellh/go-homedir"
 
 	docopt "github.com/docopt/docopt-go"
@@ -20,7 +20,7 @@ const configPath = "~/.cf/config"
 const sessionPath = "~/.cf/session"
 
 func main() {
-	usage := `Codeforces Tool $%version%$ (cf). https://github.com/lcian/cf-tool
+	usage := `Codeforces CLI $%version%$ (cf). https://github.com/lcian/codeforces-cli
 
 You should run "cf config" to configure your handle, password and code
 templates at first.
@@ -62,7 +62,7 @@ Options:
   ac                   The status of the submission is Accepted.
 
 Examples:
-  cf config            Configure the cf-tool.
+  cf config            Configure the codeforces-cli.
   cf submit            cf will detect what you want to submit automatically.
   cf submit -f a.cpp
   cf submit https://codeforces.com/contest/100/A

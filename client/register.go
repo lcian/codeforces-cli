@@ -10,7 +10,7 @@ import (
 
 	"github.com/PuerkitoBio/goquery"
 	"github.com/fatih/color"
-	"github.com/lcian/cf-tool/util"
+	"github.com/lcian/codeforces-cli/util"
 )
 
 // Register for a contest
