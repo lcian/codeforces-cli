@@ -12,7 +12,7 @@ install: build
 
 .PHONY: fmt
 fmt:
-	go fmt ./...
+	gofmt -s -l -w .
 
 .PHONY: vet
 vet:

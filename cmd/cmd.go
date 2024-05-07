@@ -107,7 +107,7 @@ func getCode(filename string, templates []config.CodeTemplate) (codes []CodeList
 	if filename != "" {
 		ext := filepath.Ext(filename)
 		if idx, ok := mp[ext]; ok {
-			return []CodeList{CodeList{filename, idx}}, nil
+			return []CodeList{{filename, idx}}, nil
 		}
 		return nil, fmt.Errorf("%v can not match any template. You could add a new template by `cf config`", filename)
 	}
