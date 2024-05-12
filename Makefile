@@ -6,10 +6,6 @@ build:
 clean:
 	rm -f cf
 
-.PHONY: install
-install: build
-	go install
-
 .PHONY: fmt
 fmt:
 	gofmt -s -l -w .

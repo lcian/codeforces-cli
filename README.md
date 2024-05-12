@@ -11,6 +11,10 @@ Codeforces CLI is a command-line interface tool for the competitive programming 
 
 It's fast, small, cross-platform and powerful.
 
+This is a fork of the original repo [xalanq/cf-tool](https://github.com/xalanq/cf-tool) which is no longer maintained.
+
+Feel free to open an issue/pull request if you find any bugs or have any suggestions for features to add!
+
 [Installation](#installation) | [Usage](#usage) | [FAQ](#faq)
 
 ## Features
@@ -28,19 +32,11 @@ It's fast, small, cross-platform and powerful.
 * Setup a network proxy. Setup a mirror host.
 * Colorful CLI.
 
-Pull requests are always welcome.
-
 ![](./assets/readme_1.gif)
 
 ## Installation
 
 You can download the pre-compiled binary file in [here](https://github.com/lcian/codeforces-cli/releases).
-
-Or you can use `go install`:
-
-```sh
-go install github.com/lcian/codeforces-cli@latest
-```
 
 Or you can compile it from source **(go >= 1.22)**:
 
@@ -48,10 +44,9 @@ Or you can compile it from source **(go >= 1.22)**:
 git clone https://github.com/lcian/codeforces-cli.git
 cd codeforces-cli
 make
-make install
 ```
 
-This will install the `cf` binary to your `$GOPATH/bin` directory.
+This will create a `cf` binary that you can move somewhere in your $PATH.
 
 ## Usage
 
