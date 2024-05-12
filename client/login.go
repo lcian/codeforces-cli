@@ -64,7 +64,7 @@ func (c *Client) GetCloudflareCookieFromUser() (err error) {
 		Path:   "/",
 		Domain: "codeforces.com",
 	}
-	url, _ := url.Parse("codeforces.com")
+	url, _ := url.Parse("https://codeforces.com")
 	c.client.Jar.SetCookies(url, append(c.client.Jar.Cookies(url), &cf_clearance_cookie))
 	return nil
 }
