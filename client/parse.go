@@ -34,6 +34,7 @@ func findSample(body []byte) (input [][]byte, output [][]byte, err error) {
 		src = tagRegex.ReplaceAll(src, []byte("\n"))
 		src = bytes.ReplaceAll(src, []byte("\n\n"), []byte("\n"))
 		s := html.UnescapeString(string(src))
+		s = strings.ReplaceAll(s, "<br />", "\n")
 		return []byte(strings.TrimSpace(s))
 	}
 
